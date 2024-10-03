@@ -1,0 +1,6 @@
+1. Revision de las dependencias
+    rmp -qa semanage
+2. Instalación del paquete necesario
+sudo dnf install policycoreutils-python-utils
+3. Revision del archivo de configuración en la carpeta etc selinux
+4. Revisión del contexto de un servicio mediante la investigación de la etiqueta de un conjunto, which, ls -lZ
