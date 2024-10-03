@@ -1,0 +1,10 @@
+La idea de semanage es permitir activar o desactivar booleanos para ajustar el comportamiento de SELinux sin necesidad de recompilar la política completa.
+Ejemplo si cambias un servicio de puerto X a Y, al tener selinux activo, tendrás error a la hora de modificar el servicio. Para solucionar este problema deberias recompilar las 
+politicas de selinux de manera completa. La solución a este problema sería utilizar semanage para agregarle a dicho puerto una política (un dominio) con un protocolo X.
+
+Ejemplo: sudo semanage -a (agregar) -t (tipo de dominio) http_port_t (dominio) -p (protocolo) tcp 8888
+
+
+Tambien se puede usar semanage para cambiar el contexto de selinux para un dominio en específico, mediante:
+semanage (tipo de permiso) -a (agregar) httpd_t (dominio) o eliminar mediante -d 
+
